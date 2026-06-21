@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AS Automation Company Chennai - Industrial automation products supplier offering PLC, HMI, VFD, Servo, Sensors, SMPS, Relay Boards, Encoders from Delta, Siemens, Schneider, Mitsubishi, Omron brands.">
+    <meta name="keywords" content="industrial automation, PLC, HMI, VFD, Servo, Sensors, SMPS, Relay Boards, Encoders, Delta, Siemens, Schneider, Mitsubishi, Omron, Chennai, Tamil Nadu">
+    <title>AS Automation Company | Industrial Automation Solutions Chennai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a0e1a;
+            --secondary: #0f172a;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --accent-dark: #1d4ed8;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --light: #f0f5ff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #0a0e1a 0%, #1e3a5f 50%, #0a0e1a 100%);
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+        ::selection { background: var(--accent); color: var(--white); }
+
+        /* LOADER */
+        .loader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--primary); z-index: 99999;
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column; gap: 20px;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        .loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        .loader-spinner {
+            width: 70px; height: 70px;
+            border: 4px solid rgba(255,255,255,0.08);
+            border-top-color: var(--accent);
+            border-right-color: var(--accent-light);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        .loader-text {
+            color: var(--accent-light); font-size: 14px; font-weight: 700;
+            letter-spacing: 5px; text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* PARTICLES */
+        .particles {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            overflow: hidden; pointer-events: none; z-index: 1;
+        }
+        .particle {
+            position: absolute; width: 4px; height: 4px;
+            background: var(--accent); border-radius: 50%;
+            opacity: 0.3; animation: float-particle 8s infinite ease-in-out;
+        }
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+            25% { transform: translateY(-30px) translateX(15px); opacity: 0.6; }
+            50% { transform: translateY(-15px) translateX(-10px); opacity: 0.4; }
+            75% { transform: translateY(-40px) translateX(20px); opacity: 0.5; }
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 18px 0; transition: all 0.4s ease;
+            background: transparent;
+        }
+        .navbar.scrolled {
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            padding: 12px 0;
+        }
+        .nav-container {
+            max-width: 1280px; margin: 0 auto; padding: 0 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            display: flex; align-items: center; gap: 14px;
+            text-decoration: none;
+        }
+        .logo-icon {
+            width: 52px; height: 52px; background: var(--accent-gradient);
+            border-radius: 14px; display: flex; align-items: center;
+            justify-content: center; font-size: 22px; color: var(--white);
+            font-weight: 900; font-family: 'Orbitron', sans-serif;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            animation: glow-pulse 3s infinite;
+        }
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4); }
+            50% { box-shadow: 0 8px 35px rgba(59, 130, 246, 0.7); }
+        }
+        .logo-text { color: var(--white); }
+        .logo-text h1 { font-size: 20px; font-weight: 800; letter-spacing: 1px; line-height: 1.1; font-family: 'Orbitron', sans-serif; }
+        .logo-text span { font-size: 10px; color: var(--accent-light); letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
+        .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+        .nav-links a {
+            color: var(--white); text-decoration: none; font-size: 13px;
+            font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+            position: relative; padding: 6px 0; transition: color 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+            background: var(--accent); transition: width 0.3s; box-shadow: 0 0 10px var(--accent);
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-light); }
+        .nav-cta {
+            padding: 12px 28px; background: var(--accent-gradient); color: var(--white);
+            border-radius: 50px; font-weight: 700; font-size: 12px;
+            text-transform: uppercase; letter-spacing: 1px;
+            border: 2px solid var(--accent); transition: all 0.3s;
+            cursor: pointer; text-decoration: none;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        .nav-cta:hover { background: transparent; color: var(--accent-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5); }
+        .mobile-menu-btn {
+            display: none; background: none; border: none;
+            color: var(--white); font-size: 24px; cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh; background: var(--gradient);
+            display: flex; align-items: center; position: relative;
+            overflow: hidden; padding-top: 90px;
+        }
+        .hero-grid-pattern {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -50%; right: -20%;
+            width: 700px; height: 700px; background: rgba(59, 130, 246, 0.06);
+            border-radius: 50%; filter: blur(120px); pointer-events: none;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -30%; left: -10%;
+            width: 500px; height: 500px; background: rgba(96, 165, 250, 0.04);
+            border-radius: 50%; filter: blur(100px); pointer-events: none;
+        }
+        .hero-content {
+            max-width: 1280px; margin: 0 auto; padding: 0 24px;
+            display: grid; grid-template-columns: 1.1fr 1fr;
+            gap: 70px; align-items: center; position: relative; z-index: 2;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 8px 20px; background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 50px;
+            color: var(--accent-light); font-size: 12px; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px;
+            font-family: 'Orbitron', sans-serif;
+            animation: fade-in-up 0.8s ease-out;
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-text h1 {
+            font-size: 52px; color: var(--white); font-weight: 900;
+            line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px;
+            font-family: 'Inter', sans-serif;
+            animation: fade-in-up 0.8s ease-out 0.2s both;
+        }
+        .hero-text h1 span {
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-text p {
+            font-size: 17px; color: rgba(255,255,255,0.7);
+            line-height: 1.8; margin-bottom: 36px; max-width: 500px;
+            animation: fade-in-up 0.8s ease-out 0.4s both;
+        }
+        .hero-btns { display: flex; gap: 18px; flex-wrap: wrap; animation: fade-in-up 0.8s ease-out 0.6s both; }
+        .btn {
+            padding: 16px 32px; border-radius: 50px; font-size: 13px;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+            text-decoration: none; transition: all 0.3s ease;
+            display: inline-flex; align-items: center; gap: 10px;
+            cursor: pointer; border: none; position: relative; overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        .btn:hover::before { left: 100%; }
+        .btn-primary {
+            background: var(--accent-gradient); color: var(--white);
+            box-shadow: 0 10px 35px rgba(59, 130, 246, 0.4);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5); }
+        .btn-outline {
+            background: transparent; color: var(--white);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent-light); transform: translateY(-3px); }
+        .hero-image-wrapper { position: relative; }
+        .hero-image-main {
+            width: 100%; max-width: 540px; position: relative; z-index: 2;
+            animation: fade-in-up 0.8s ease-out 0.5s both;
+        }
+        .hero-image-main img {
+            width: 100%; border-radius: 24px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+            display: block;
+        }
+        .hero-image-main::before {
+            content: ''; position: absolute; top: -12px; right: -12px;
+            width: 100%; height: 100%; border: 3px solid var(--accent);
+            border-radius: 24px; z-index: -1; opacity: 0.3;
+            animation: border-glow 3s infinite;
+        }
+        @keyframes border-glow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        .floating-card {
+            position: absolute; background: var(--glass);
+            backdrop-filter: blur(20px); border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 16px; padding: 20px 24px; color: var(--white); z-index: 3;
+            animation: float-card 5s ease-in-out infinite;
+        }
+        .floating-card.card-1 { top: 5%; right: -20px; animation-delay: 0s; }
+        .floating-card.card-2 { bottom: 15%; left: -30px; animation-delay: 2.5s; }
+        @keyframes float-card { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        .floating-card h4 { font-size: 28px; font-weight: 900; color: var(--accent-light); line-height: 1; margin-bottom: 4px; font-family: 'Orbitron', sans-serif; }
+        .floating-card p { font-size: 11px; color: rgba(255,255,255,0.7); letter-spacing: 1px; }
+        .floating-card i { font-size: 18px; color: var(--accent-light); margin-bottom: 6px; display: block; }
+        .hero-scroll-indicator {
+            position: absolute; bottom: 35px; left: 50%;
+            transform: translateX(-50%); display: flex;
+            flex-direction: column; align-items: center; gap: 8px;
+            color: rgba(255,255,255,0.4); font-size: 11px;
+            letter-spacing: 2px; text-transform: uppercase;
+            animation: bounce 2s infinite; cursor: pointer; text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .hero-scroll-indicator i { font-size: 18px; color: var(--accent-light); }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-10px); } 60% { transform: translateX(-50%) translateY(-5px); } }
+
+        /* SECTION COMMON */
+        section { padding: 90px 0; position: relative; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header .section-label {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-size: 12px; color: var(--accent); text-transform: uppercase;
+            letter-spacing: 4px; margin-bottom: 16px; font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .section-header .section-label::before,
+        .section-header .section-label::after { content: ''; width: 25px; height: 2px; background: var(--accent); border-radius: 2px; }
+        .section-header h2 { font-size: 40px; color: var(--primary); font-weight: 800; margin-bottom: 18px; line-height: 1.2; }
+        .section-header h2 span { color: var(--accent); }
+        .section-header p { color: var(--text-light); font-size: 16px; max-width: 600px; margin: 0 auto; line-height: 1.8; }
+
+        /* ABOUT */
+        .about { background: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+        .about-image-wrapper { position: relative; }
+        .about-image-wrapper::before {
+            content: ''; position: absolute; top: -18px; left: -18px;
+            width: 100%; height: 100%; border: 3px solid var(--accent);
+            border-radius: 24px; z-index: 0; opacity: 0.2;
+        }
+        .about-content .about-label {
+            font-size: 12px; color: var(--accent); text-transform: uppercase;
+            letter-spacing: 3px; margin-bottom: 14px; font-weight: 700;
+            display: flex; align-items: center; gap: 12px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .about-content .about-label::before { content: ''; width: 35px; height: 3px; background: var(--accent); border-radius: 2px; }
+        .about-content h2 { font-size: 36px; color: var(--primary); font-weight: 800; margin-bottom: 24px; line-height: 1.2; }
+        .about-content > p { color: var(--text-light); line-height: 1.8; margin-bottom: 18px; font-size: 15px; }
+        .about-content strong { color: var(--primary); font-weight: 700; }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+        .about-feature { display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 14px; background: var(--light); transition: all 0.3s; border: 1px solid transparent; }
+        .about-feature:hover { background: var(--white); border-color: var(--accent); transform: translateX(6px); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.12); }
+        .about-feature i { width: 44px; height: 44px; min-width: 44px; background: linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(59,130,246,0.05) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 16px; }
+        .about-feature:hover i { background: var(--accent); color: var(--white); }
+        .about-feature span { font-weight: 700; color: var(--primary); font-size: 13px; }
+
+        /* BRANDS MARQUEE */
+        .brands-section { background: var(--white); padding: 50px 0; overflow: hidden; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+        .brands-section h3 { text-align: center; font-size: 12px; color: var(--text-light); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 30px; font-weight: 700; font-family: 'Orbitron', sans-serif; }
+        .marquee-container { overflow: hidden; position: relative; }
+        .marquee-container::before, .marquee-container::after { content: ''; position: absolute; top: 0; width: 150px; height: 100%; z-index: 2; pointer-events: none; }
+        .marquee-container::before { left: 0; background: linear-gradient(to right, var(--white), transparent); }
+        .marquee-container::after { right: 0; background: linear-gradient(to left, var(--white), transparent); }
+        .marquee-track { display: flex; gap: 40px; animation: marquee 30s linear infinite; width: max-content; }
+        .marquee-track:hover { animation-play-state: paused; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .brand-item { min-width: 160px; height: 60px; background: var(--light); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--text-light); font-size: 13px; border: 1px solid rgba(0,0,0,0.05); transition: all 0.3s; padding: 0 18px; letter-spacing: 1px; }
+        .brand-item:hover { background: var(--primary); color: var(--white); transform: translateY(-4px); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25); }
+
+        /* PRODUCTS */
+        .products { background: var(--light); }
+        .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .product-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.4s; position: relative; border: 1px solid rgba(0,0,0,0.03); }
+        .product-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 25px 60px rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.15); }
+        .product-image { height: 200px; background: var(--gradient); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+        .product-card:hover .product-image img { transform: scale(1.1); }
+        .product-image-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(10,14,26,0.85) 0%, rgba(10,14,26,0.3) 100%); display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 24px; }
+        .product-image-overlay i { font-size: 42px; color: rgba(255,255,255,0.15); margin-bottom: auto; margin-top: 30px; }
+        .product-image-overlay h4 { color: var(--white); font-size: 18px; font-weight: 700; text-align: center; }
+        .product-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 14, 26, 0.85); display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s; backdrop-filter: blur(5px); }
+        .product-card:hover .product-overlay { opacity: 1; }
+        .product-overlay a { width: 50px; height: 50px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 18px; transform: translateY(25px) scale(0.8); transition: all 0.3s; text-decoration: none; }
+        .product-card:hover .product-overlay a { transform: translateY(0) scale(1); }
+        .product-info { padding: 26px; }
+        .product-info h3 { font-size: 18px; color: var(--primary); margin-bottom: 10px; font-weight: 700; }
+        .product-info p { color: var(--text-light); font-size: 13px; line-height: 1.7; margin-bottom: 18px; }
+        .product-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .product-tag { padding: 5px 14px; background: rgba(59, 130, 246, 0.08); color: var(--accent); border-radius: 20px; font-size: 11px; font-weight: 700; border: 1px solid rgba(59, 130, 246, 0.15); }
+
+        /* SERVICES */
+        .services { background: var(--white); }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .service-card { display: flex; flex-direction: column; gap: 20px; padding: 35px; background: var(--light); border-radius: 20px; transition: all 0.4s; border: 2px solid transparent; position: relative; overflow: hidden; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--accent-gradient); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover { border-color: rgba(59, 130, 246, 0.15); transform: translateY(-8px); background: var(--white); box-shadow: 0 20px 50px rgba(59, 130, 246, 0.12); }
+        .service-icon { width: 64px; height: 64px; background: var(--gradient); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 26px; transition: all 0.4s; position: relative; z-index: 1; }
+        .service-card:hover .service-icon { background: var(--accent); color: var(--white); transform: rotateY(360deg) scale(1.1); }
+        .service-content h3 { font-size: 19px; color: var(--primary); margin-bottom: 10px; font-weight: 700; }
+        .service-content p { color: var(--text-light); font-size: 13px; line-height: 1.8; }
+        .service-number { position: absolute; top: 18px; right: 22px; font-size: 50px; font-weight: 900; color: rgba(0,0,0,0.03); line-height: 1; font-family: 'Orbitron', sans-serif; }
+
+        /* WHY US */
+        .why-us { background: var(--gradient); position: relative; overflow: hidden; }
+        .why-us .section-header h2, .why-us .section-header .section-label { color: var(--white); }
+        .why-us .section-header p { color: rgba(255,255,255,0.65); }
+        .why-us .section-header .section-label::before, .why-us .section-header .section-label::after { background: var(--accent); }
+        .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .why-card { background: var(--glass); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 40px 24px; text-align: center; transition: all 0.4s; backdrop-filter: blur(10px); }
+        .why-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-12px); border-color: rgba(59, 130, 246, 0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
+        .why-card .icon-box { width: 75px; height: 75px; background: rgba(59, 130, 246, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 30px; color: var(--accent-light); transition: all 0.4s; border: 1px solid rgba(59, 130, 246, 0.2); }
+        .why-card:hover .icon-box { background: var(--accent); color: var(--white); transform: rotate(360deg) scale(1.1); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4); border-color: var(--accent); }
+        .why-card h3 { color: var(--white); font-size: 19px; margin-bottom: 14px; font-weight: 700; }
+        .why-card p { color: rgba(255,255,255,0.65); font-size: 13px; line-height: 1.8; }
+
+        /* GALLERY */
+        .gallery { background: var(--white); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .gallery-item {
+            position: relative; border-radius: 16px; overflow: hidden;
+            cursor: pointer; aspect-ratio: 4/3; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+        }
+        .gallery-item:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(10,14,26,0.8) 0%, transparent 60%);
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 20px; opacity: 0; transition: opacity 0.3s;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay h4 { color: var(--white); font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .gallery-overlay p { color: rgba(255,255,255,0.7); font-size: 12px; }
+        .gallery-overlay .zoom-icon {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 50px; height: 50px; background: var(--accent); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--white); font-size: 18px; opacity: 0; transition: all 0.3s;
+        }
+        .gallery-item:hover .zoom-icon { opacity: 1; }
+
+        /* LIGHTBOX */
+        .lightbox {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); z-index: 10000; align-items: center; justify-content: center;
+            padding: 20px;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox-img { max-width: 90%; max-height: 85vh; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+        .lightbox-close {
+            position: absolute; top: 30px; right: 40px; color: var(--white);
+            font-size: 36px; cursor: pointer; background: none; border: none;
+            transition: transform 0.3s;
+        }
+        .lightbox-close:hover { transform: rotate(90deg); color: var(--accent-light); }
+        .lightbox-nav {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            color: var(--white); font-size: 30px; cursor: pointer;
+            background: rgba(255,255,255,0.1); border: none; width: 50px; height: 50px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s;
+        }
+        .lightbox-nav:hover { background: var(--accent); }
+        .lightbox-prev { left: 30px; }
+        .lightbox-next { right: 30px; }
+        .lightbox-caption {
+            position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+            color: var(--white); text-align: center; background: rgba(0,0,0,0.6);
+            padding: 10px 30px; border-radius: 30px; font-size: 14px;
+        }
+
+        
+        /* PROJECTS */
+        .projects { background: var(--light); }
+        .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .project-card {
+            background: var(--white); border-radius: 20px; overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: all 0.4s;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(59, 130, 246, 0.15); }
+        .project-image { height: 220px; position: relative; overflow: hidden; }
+        .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .project-card:hover .project-image img { transform: scale(1.1); }
+        .project-badge {
+            position: absolute; top: 15px; left: 15px;
+            padding: 6px 14px; background: var(--accent); color: var(--white);
+            border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase;
+        }
+        .project-info { padding: 28px; }
+        .project-info h3 { font-size: 20px; color: var(--primary); margin-bottom: 10px; font-weight: 700; }
+        .project-info p { color: var(--text-light); font-size: 14px; line-height: 1.7; margin-bottom: 18px; }
+        .project-meta { display: flex; gap: 20px; border-top: 1px solid #e2e8f0; padding-top: 18px; }
+        .project-meta-item { display: flex; align-items: center; gap: 8px; color: var(--text-light); font-size: 13px; }
+        .project-meta-item i { color: var(--accent); }
+
+        /* INDUSTRIES */
+        .industries { background: var(--white); }
+        .industries-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .industry-card { background: var(--light); border-radius: 16px; padding: 30px 20px; text-align: center; transition: all 0.4s; border: 1px solid transparent; }
+        .industry-card:hover { background: var(--primary); transform: translateY(-8px); border-color: var(--accent); box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2); }
+        .industry-card i { font-size: 36px; color: var(--accent); margin-bottom: 16px; transition: all 0.3s; }
+        .industry-card:hover i { color: var(--accent-light); transform: scale(1.2); }
+        .industry-card h4 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 8px; transition: color 0.3s; }
+        .industry-card:hover h4 { color: var(--white); }
+        .industry-card p { font-size: 12px; color: var(--text-light); line-height: 1.6; transition: color 0.3s; }
+        .industry-card:hover p { color: rgba(255,255,255,0.7); }
+
+        /* TESTIMONIALS */
+        .testimonials { background: var(--light); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .testimonial-card { background: var(--white); border-radius: 20px; padding: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: relative; transition: all 0.4s; border: 1px solid rgba(0,0,0,0.03); }
+        .testimonial-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(59, 130, 246, 0.12); border-color: rgba(59, 130, 246, 0.1); }
+        .testimonial-card::before { content: '"'; position: absolute; top: 20px; right: 30px; font-size: 80px; color: var(--accent); opacity: 0.1; font-family: Georgia, serif; line-height: 1; }
+        .testimonial-stars { color: #fbbf24; margin-bottom: 18px; font-size: 14px; letter-spacing: 2px; }
+        .testimonial-text { color: var(--text-light); line-height: 1.8; margin-bottom: 24px; font-size: 14px; font-style: italic; }
+        .testimonial-author { display: flex; align-items: center; gap: 16px; }
+        .author-avatar { width: 50px; height: 50px; background: var(--gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 800; font-size: 18px; }
+        .author-info h4 { color: var(--primary); font-size: 16px; font-weight: 700; }
+        .author-info p { color: var(--text-light); font-size: 12px; margin-top: 2px; }
+
+        /* CONTACT */
+        .contact { background: var(--white); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; }
+        .contact-info h3 { font-size: 32px; color: var(--primary); margin-bottom: 18px; font-weight: 800; }
+        .contact-info > p { color: var(--text-light); line-height: 1.8; margin-bottom: 40px; font-size: 14px; }
+        .contact-details { display: flex; flex-direction: column; gap: 22px; }
+        .contact-item { display: flex; align-items: flex-start; gap: 18px; padding: 20px; border-radius: 16px; background: var(--light); transition: all 0.3s; border: 1px solid transparent; }
+        .contact-item:hover { background: var(--white); border-color: rgba(59, 130, 246, 0.15); transform: translateX(8px); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.1); }
+        .contact-item i { width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(59,130,246,0.05) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 18px; }
+        .contact-item:hover i { background: var(--accent); color: var(--white); }
+        .contact-item h4 { color: var(--primary); font-size: 16px; margin-bottom: 5px; font-weight: 700; }
+        .contact-item p { color: var(--text-light); font-size: 13px; line-height: 1.7; }
+        .contact-item a { color: var(--text-light); text-decoration: none; transition: color 0.3s; }
+        .contact-item a:hover { color: var(--accent); }
+        .contact-form-wrapper { background: var(--light); border-radius: 20px; padding: 45px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.03); }
+        .form-group { margin-bottom: 22px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--primary); font-weight: 600; font-size: 13px; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px 18px; border: 2px solid #e2e8f0; border-radius: 12px; font-family: 'Inter', sans-serif; font-size: 13px; transition: all 0.3s; background: var(--white); color: var(--text); }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .form-submit-btn { width: 100%; justify-content: center; margin-top: 8px; }
+
+        /* MAP */
+        .map-section { padding: 0; height: 380px; background: var(--light); position: relative; }
+        .map-section iframe { width: 100%; height: 100%; border: none; filter: grayscale(0.2) contrast(1.1); }
+        .map-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--white); padding: 22px 35px; border-radius: 14px; box-shadow: 0 20px 50px rgba(0,0,0,0.12); text-align: center; z-index: 2; }
+        .map-overlay h4 { color: var(--primary); font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+        .map-overlay p { color: var(--text-light); font-size: 13px; }
+
+        /* FOOTER */
+        .footer { background: var(--primary); color: var(--white); padding: 70px 0 30px; position: relative; }
+        .footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--accent-gradient); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 50px; margin-bottom: 50px; }
+        .footer-brand .logo { margin-bottom: 22px; }
+        .footer-brand p { color: rgba(255,255,255,0.5); line-height: 1.8; font-size: 13px; margin-bottom: 25px; }
+        .social-links { display: flex; gap: 12px; }
+        .social-links a { width: 42px; height: 42px; background: rgba(255,255,255,0.06); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 16px; transition: all 0.3s; text-decoration: none; border: 1px solid rgba(255,255,255,0.08); }
+        .social-links a:hover { background: var(--accent); color: var(--white); transform: translateY(-4px) rotate(-5deg); box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3); border-color: var(--accent); }
+        .footer-column h4 { font-size: 17px; margin-bottom: 24px; color: var(--white); font-weight: 700; position: relative; padding-bottom: 10px; }
+        .footer-column h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 3px; background: var(--accent); border-radius: 2px; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 12px; }
+        .footer-column ul li a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; transition: all 0.3s; display: flex; align-items: center; gap: 10px; }
+        .footer-column ul li a:hover { color: var(--accent-light); padding-left: 6px; }
+        .footer-column ul li a i { font-size: 9px; color: var(--accent); }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; color: rgba(255,255,255,0.5); font-size: 13px; transition: all 0.3s; }
+        .footer-contact-item:hover { color: var(--accent-light); }
+        .footer-contact-item i { color: var(--accent); font-size: 15px; margin-top: 3px; min-width: 18px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
+        .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 12px; }
+        .footer-bottom a { color: var(--accent-light); text-decoration: none; }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; z-index: 999; }
+        .whatsapp-float a { width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 30px; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); transition: all 0.3s; text-decoration: none; position: relative; animation: whatsapp-bounce 2s infinite; }
+        .whatsapp-float a:hover { transform: scale(1.15) rotate(10deg); box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5); }
+        .whatsapp-float a::before { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; background: #25d366; animation: pulse-ring 2s infinite; z-index: -1; }
+        @keyframes pulse-ring { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(1.6); opacity: 0; } }
+        @keyframes whatsapp-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        .whatsapp-tooltip { position: absolute; right: 75px; top: 50%; transform: translateY(-50%); background: var(--white); color: var(--primary); padding: 10px 18px; border-radius: 10px; font-size: 13px; font-weight: 700; white-space: nowrap; box-shadow: 0 5px 20px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transition: all 0.3s; }
+        .whatsapp-float a:hover .whatsapp-tooltip { opacity: 1; visibility: visible; right: 80px; }
+
+        /* BACK TO TOP */
+        .back-to-top { position: fixed; bottom: 105px; right: 25px; width: 46px; height: 46px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 18px; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 998; border: none; box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3); }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-5px) rotate(-10deg); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4); }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .hero-text h1 { font-size: 44px; }
+            .section-header h2 { font-size: 34px; }
+            .about-content h2 { font-size: 30px; }
+            .products-grid { grid-template-columns: repeat(3, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; gap: 45px; }
+            .hero-text p { margin: 0 auto 36px; }
+            .hero-btns { justify-content: center; }
+            .hero-image-wrapper { display: none; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid, .why-grid, .industries-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-image-wrapper { max-width: 550px; margin: 0 auto; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(10, 14, 26, 0.98); flex-direction: column; padding: 90px 35px; gap: 25px; backdrop-filter: blur(20px); z-index: 999; }
+            .nav-links.active { display: flex; }
+            .nav-links a { font-size: 16px; }
+            .mobile-menu-btn { display: block; z-index: 1001; position: relative; }
+            .hero-text h1 { font-size: 32px; }
+            .hero-badge { font-size: 10px; padding: 6px 14px; }
+            .section-header h2 { font-size: 26px; }
+            .about-content h2 { font-size: 24px; }
+            .products-grid, .gallery-grid, .projects-grid, .testimonials-grid, .why-grid, .industries-grid, .stats-grid, .services-grid { grid-template-columns: 1fr; }
+            .upload-preview { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; gap: 35px; }
+            .form-row { grid-template-columns: 1fr; }
+            .about-features { grid-template-columns: 1fr; }
+            .floating-card { display: none; }
+            .hero-scroll-indicator { display: none; }
+            .map-overlay { display: none; }
+            .nav-cta { display: none; }
+            section { padding: 60px 0; }
+            .contact-form-wrapper { padding: 25px; }
+            .brands-section { padding: 35px 0; }
+            .lightbox-nav { display: none; }
+        }
+        @media (max-width: 480px) {
+            .hero-text h1 { font-size: 26px; }
+            .section-header h2 { font-size: 22px; }
+            .btn { padding: 12px 24px; font-size: 11px; }
+            .upload-preview { grid-template-columns: 1fr; }
+        }
+            .btn-youtube {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%); color: var(--white);
+            box-shadow: 0 10px 35px rgba(255, 0, 0, 0.3);
+        }
+        .btn-youtube:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(255, 0, 0, 0.4); }
+
+        /* YOUTUBE SECTION */
+        .youtube-section { background: var(--gradient); padding: 80px 0; position: relative; overflow: hidden; }
+        .youtube-section::before {
+            content: ''; position: absolute; top: -50%; right: -20%;
+            width: 600px; height: 600px; background: rgba(255, 0, 0, 0.05);
+            border-radius: 50%; filter: blur(120px); pointer-events: none;
+        }
+        .youtube-section .section-header h2, .youtube-section .section-header .section-label { color: var(--white); }
+        .youtube-section .section-header p { color: rgba(255,255,255,0.65); }
+        .youtube-section .section-header .section-label::before, .youtube-section .section-header .section-label::after { background: #ff0000; }
+        .youtube-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .youtube-content h3 { color: var(--white); font-size: 28px; font-weight: 800; margin-bottom: 16px; }
+        .youtube-content p { color: rgba(255,255,255,0.7); font-size: 15px; line-height: 1.8; margin-bottom: 28px; }
+        .youtube-stats { display: flex; gap: 30px; margin-bottom: 30px; }
+        .youtube-stat { text-align: center; }
+        .youtube-stat h4 { color: #ff0000; font-size: 32px; font-weight: 900; font-family: 'Orbitron', sans-serif; }
+        .youtube-stat p { color: rgba(255,255,255,0.6); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        .youtube-embed { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.4); border: 2px solid rgba(255,255,255,0.1); }
+        .youtube-embed iframe { width: 100%; height: 320px; border: none; display: block; }
+        .youtube-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 14px 32px; background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: var(--white); border-radius: 50px; font-weight: 700; font-size: 13px;
+            text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+            transition: all 0.3s; box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+        }
+        .youtube-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4); }
+        .youtube-btn i { font-size: 18px; }
+        .social-links a.youtube-link:hover { background: #ff0000; border-color: #ff0000; box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3); }
+
+        @media (max-width: 1024px) {
+            .youtube-grid { grid-template-columns: 1fr; text-align: center; }
+            .youtube-content { order: 2; }
+            .youtube-embed { order: 1; }
+            .youtube-stats { justify-content: center; }
+        }
+        @media (max-width: 768px) {
+            .youtube-stats { flex-direction: column; gap: 15px; }
+            .youtube-embed iframe { height: 220px; }
+        }
+</style>
+</head>
+<body>
+
+    <!-- LOADER -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading Experience</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon" style="background: linear-gradient(135deg, #1e3a5f 0%, #0a0e1a 100%); border: 2px solid rgba(59,130,246,0.5);">
+                            <svg viewBox="0 0 100 100" width="40" height="40" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#60a5fa" stroke-width="3"/>
+                                <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(96,165,250,0.3)" stroke-width="1"/>
+                                <path d="M30 60 Q50 25 70 60" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+                                <circle cx="50" cy="38" r="8" fill="#ffffff"/>
+                                <path d="M58 45 L75 30" stroke="#ff6b35" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M72 28 L80 22 M75 32 L82 26" stroke="#ff6b35" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M35 50 L25 55 M38 45 L28 50" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                <div class="logo-text">
+                    <h1>AS AUTOMATION</h1>
+                    <span>Company Chennai</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#youtube">YouTube</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-grid-pattern"></div>
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-circle" style="font-size:7px;"></i> Industrial Automation Experts
+                </div>
+                <h1>Powering Industry with <span>Smart Automation</span> Solutions</h1>
+                <p>Your trusted partner for PLC, HMI, VFD, Servo Systems, Sensors, SMPS, and Control Panels across South India. Authorized dealer for Delta, Siemens, Schneider, Mitsubishi, Omron and more.</p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn btn-primary">
+                        <i class="fas fa-boxes"></i> Explore Products
+                    </a>
+                    <a href="https://wa.me/919176742590?text=Hello%20AS%20Automation,%20I%20am%20interested%20in%20your%20products%20and%20services." target="_blank" class="btn btn-outline">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                    <a href="https://youtube.com/@asautomation2018" target="_blank" class="btn btn-youtube">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&q=80" 
+                         alt="Industrial Automation Control Panel" 
+                         loading="eager"
+                         onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop&q=80';">
+                </div>
+                <div class="floating-card card-1">
+                    <i class="fas fa-project-diagram"></i>
+                    <h4>500+</h4>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-award"></i>
+                    <h4>15+</h4>
+                    <p>Years of Excellence</p>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="hero-scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper" data-aos="fade-right" data-aos-duration="1000">
+                    <div style="background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 2px solid #e2e8f0; min-height: 420px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 45px 35px; text-align: center; position: relative;">
+                        <div style="width: 90px; height: 90px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 22px; box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);">
+                            <i class="fas fa-industry" style="font-size: 40px; color: #ffffff;"></i>
+                        </div>
+                        <h3 style="font-size: 32px; font-weight: 900; color: #0a0e1a; margin-bottom: 6px; letter-spacing: -1px; font-family: 'Orbitron', sans-serif;">AS Automation</h3>
+                        <p style="font-size: 14px; color: #64748b; margin-bottom: 25px; font-weight: 500;">Industrial Automation Products & Services</p>
+                        <div style="width: 50px; height: 4px; background: var(--accent-gradient); border-radius: 2px; margin-bottom: 25px;"></div>
+                        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">
+                            <span style="background: rgba(59,130,246,0.08); border: 1.5px solid rgba(59,130,246,0.25); padding: 8px 16px; border-radius: 22px; font-size: 12px; color: #1d4ed8; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                                <i class="fas fa-microchip"></i> PLC
+                            </span>
+                            <span style="background: rgba(59,130,246,0.08); border: 1.5px solid rgba(59,130,246,0.25); padding: 8px 16px; border-radius: 22px; font-size: 12px; color: #1d4ed8; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                                <i class="fas fa-desktop"></i> HMI
+                            </span>
+                            <span style="background: rgba(59,130,246,0.08); border: 1.5px solid rgba(59,130,246,0.25); padding: 8px 16px; border-radius: 22px; font-size: 12px; color: #1d4ed8; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                                <i class="fas fa-tachometer-alt"></i> VFD
+                            </span>
+                            <span style="background: rgba(59,130,246,0.08); border: 1.5px solid rgba(59,130,246,0.25); padding: 8px 16px; border-radius: 22px; font-size: 12px; color: #1d4ed8; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                                <i class="fas fa-cog"></i> Servo
+                            </span>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #0a0e1a 0%, #1e3a5f 100%); border-radius: 14px; padding: 18px 30px; display: inline-flex; align-items: center; gap: 14px; box-shadow: 0 10px 25px rgba(10, 14, 26, 0.2);">
+                            <span style="font-size: 38px; font-weight: 900; color: #60a5fa; line-height: 1; font-family: 'Orbitron', sans-serif;">15+</span>
+                            <span style="font-size: 14px; font-weight: 700; color: #ffffff; text-align: left; line-height: 1.4;">Years of<br>Industry Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="about-label">About Our Company</div>
+                    <h2>Your Trusted Partner in Industrial Automation</h2>
+                    <p>AS Automation Company Chennai is a leading supplier and service provider of industrial automation products and solutions. Established by <strong>Mr. Azarudeen</strong> and <strong>Mr. Selva Kumar</strong>, we have built a strong reputation for delivering quality automation components and expert technical services across Tamil Nadu and South India.</p>
+                    <p>We are authorized dealers and distributors for world-renowned brands including <strong>Delta, Siemens, Schneider Electric, Mitsubishi Electric, Omron, Mean Well, and Trinity Touch</strong>. Our comprehensive product portfolio covers everything from basic sensors to advanced PLC systems and servo drives.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Genuine Products</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-headset"></i>
+                            <span>Technical Support</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Fast Delivery</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-tags"></i>
+                            <span>Competitive Rates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRANDS MARQUEE -->
+    <section class="brands-section">
+        <div class="container">
+            <h3>Authorized Brands We Deal</h3>
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <div class="brand-item">DELTA</div>
+                    <div class="brand-item">SIEMENS</div>
+                    <div class="brand-item">SCHNEIDER</div>
+                    <div class="brand-item">MITSUBISHI</div>
+                    <div class="brand-item">OMRON</div>
+                    <div class="brand-item">MEAN WELL</div>
+                    <div class="brand-item">TRINITY TOUCH</div>
+                    <div class="brand-item">DELTA</div>
+                    <div class="brand-item">SIEMENS</div>
+                    <div class="brand-item">SCHNEIDER</div>
+                    <div class="brand-item">MITSUBISHI</div>
+                    <div class="brand-item">OMRON</div>
+                    <div class="brand-item">MEAN WELL</div>
+                    <div class="brand-item">TRINITY TOUCH</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label"><i class="fas fa-cog"></i> Our Products</div>
+                <h2>Automation <span>Products</span> We Supply</h2>
+                <p>Complete range of industrial automation components from leading global manufacturers</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&q=80" alt="PLC Systems" loading="lazy" onerror="this.style.display='none'">
+                        <div class="product-image-overlay">
+                            <i class="fas fa-microchip"></i>
+                            <h4>PLC Systems</h4>
+                        </div>
+                    </div>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/919176742590?text=Hello%20AS%20Automation,%20I%20am%20interested%20in%20PLC%20Systems." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="product-info">
+                        <h3>PLC Systems</h3>
+                        <p>Programmable Logic Controllers from Delta, Siemens, Mitsubishi, and Omron for industrial process automation and machine control.</p>
+                        <div class="product-tags"><span class="product-tag">Delta</span><span class="product-tag">Siemens</span><span class="product-tag">Mitsubishi</span></div>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&q=80" alt="HMI and MMI Panels" loading="lazy" onerror="this.style.display='none'">
+                        <div class="product-image-overlay"><i class="fas fa-desktop"></i><h4>HMI / MMI Panels</h4></div>
+                    </div>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/919176742590?text=Hello%20AS%20Automation,%20I%20am%20interested%20in%20HMI/MMI%20Panels." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="product-info">
+                        <h3>HMI / MMI Panels</h3>
+                        <p>Human Machine Interface and Man Machine Interface panels for real-time monitoring, control, and SCADA integration.</p>
+                        <div class="product-tags"><span class="product-tag">Touch Panels</span><span class="product-tag">SCADA</span><span class="product-tag">Trinity Touch</span></div>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=400&fit=crop&q=80" alt="VFD and Drives" loading="lazy" onerror="this.style.display='none'">
+                        <div class="product-image-overlay"><i class="fas fa-tachometer-alt"></i><h4>VFD & Drives</h4></div>
+                    </div>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/919176742590?text=Hello%20AS%20Automation,%20I%20am%20interested%20in%20VFD%20and%20Drives." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="product-info">
+                        <h3>VFD & Drives</h3>
+                        <p>Variable Frequency Drives and servo motor drives for precise speed control, energy savings, and motion control applications.</p>
+                        <div class="product-tags"><span class="product-tag">VFD</span><span class="product-tag">Servo</span><span class="product-tag">Energy Save</span></div>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop&q=80" alt="Sensors and SMPS" loading="lazy" onerror="this.style.display='none'">
+                        <div class="product-image-overlay"><i class="fas fa-broadcast-tower"></i><h4>Sensors & SMPS</h4></div>
+                    </div>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/919176742590?text=Hello%20AS%20Automation,%20I%20am%20interested%20in%20Sensors%20and%20SMPS." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sensors & SMPS</h3>
+                        <p>Proximity sensors, photoelectric sensors, encoders, and Switch Mode Power Supplies for reliable industrial sensing and power.</p>
+                        <div class="product-tags"><span class="product-tag">Proximity</span><span class="product-tag">Photoelectric</span><span class="product-tag">Encoders</span></div>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=400&fit=crop&q=80" alt="Relay Boards and Relays" loading="lazy" onerror="this.style.display='none'">
+                        <div class="product-image-overlay"><i class="fas fa-plug"></i><h4>Relay Boards / Relays</h4></div>
+                    </div>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/919176742590?text=Hello%20AS%20Automation,%20I%20am%20interested%20in%20Relay%20Boards%20and%20Relays." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Relay Boards / Relays</h3>
+                        <p>Industrial relay boards, contactors, and relays for switching, protection, and control circuit applications.</p>
+                        <div class="product-tags"><span class="product-tag">Relay Boards</span><span class="product-tag">Contactors</span><span class="product-tag">Protection</span></div>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop&q=80" alt="Servo Systems" loading="lazy" onerror="this.style.display='none'">
+                        <div class="product-image-overlay"><i class="fas fa-robot"></i><h4>Servo Systems</h4></div>
+                    </div>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/919176742590?text=Hello%20AS%20Automation,%20I%20am%20interested%20in%20Servo%20Systems." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Servo Systems</h3>
+                        <p>Complete servo motor and drive systems for precision motion control, positioning, and robotics applications.</p>
+                        <div class="product-tags"><span class="product-tag">Servo Motor</span><span class="product-tag">Servo Drive</span><span class="product-tag">Positioning</span></div>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581092918056-5c7e3a28b5c0?w=600&h=400&fit=crop&q=80" alt="Encoders" loading="lazy" onerror="this.style.display='none'">
+                        <div class="product-image-overlay"><i class="fas fa-compass"></i><h4>Encoders</h4></div>
+                    </div>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/919176742590?text=Hello%20AS%20Automation,%20I%20am%20interested%20in%20Encoders." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Encoders</h3>
+                        <p>Rotary encoders, absolute encoders, and incremental encoders for precise position and speed feedback in automation systems.</p>
+                        <div class="product-tags"><span class="product-tag">Rotary</span><span class="product-tag">Absolute</span><span class="product-tag">Incremental</span></div>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop&q=80" alt="Control Panels" loading="lazy" onerror="this.style.display='none'">
+                        <div class="product-image-overlay"><i class="fas fa-plug"></i><h4>Control Panels</h4></div>
+                    </div>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/919176742590?text=Hello%20AS%20Automation,%20I%20am%20interested%20in%20Control%20Panels." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Control Panels</h3>
+                        <p>Custom designed PLC control panels, MCC panels, and automation panels built to your exact specifications and requirements.</p>
+                        <div class="product-tags"><span class="product-tag">PLC Panel</span><span class="product-tag">MCC</span><span class="product-tag">Custom</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label"><i class="fas fa-tools"></i> Our Services</div>
+                <h2>Professional <span>Services</span> We Provide</h2>
+                <p>End-to-end automation services from design to commissioning and maintenance support</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <span class="service-number">01</span>
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <div class="service-content">
+                        <h3>PLC Programming</h3>
+                        <p>Expert PLC programming services for all major brands including ladder logic, structured text, and function block diagram programming.</p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="service-number">02</span>
+                    <div class="service-icon"><i class="fas fa-desktop"></i></div>
+                    <div class="service-content">
+                        <h3>SCADA & LabVIEW Programming</h3>
+                        <p>SCADA system development and LabVIEW programming for advanced monitoring, data acquisition, and process visualization.</p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="service-number">03</span>
+                    <div class="service-icon"><i class="fas fa-plug"></i></div>
+                    <div class="service-content">
+                        <h3>PLC Control Panel</h3>
+                        <p>Design and fabrication of custom PLC control panels with proper wiring, termination, and testing as per industry standards.</p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <span class="service-number">04</span>
+                    <div class="service-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="service-content">
+                        <h3>Automation Projects</h3>
+                        <p>Complete turnkey automation projects from concept to commissioning including design, procurement, installation, and testing.</p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="service-number">05</span>
+                    <div class="service-icon"><i class="fas fa-wrench"></i></div>
+                    <div class="service-content">
+                        <h3>PLC, HMI & VFD Service</h3>
+                        <p>Comprehensive repair, troubleshooting, and maintenance services for PLC, HMI, and VFD systems to minimize downtime.</p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="service-number">06</span>
+                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="service-content">
+                        <h3>Training & Consulting</h3>
+                        <p>Hands-on training for operators and engineers on PLC programming, HMI operation, and maintenance procedures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US SECTION -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label"><i class="fas fa-star"></i> Why Choose Us</div>
+                <h2>Reasons to <span>Trust</span> AS Automation</h2>
+                <p>We combine technical expertise with customer-centric service to deliver unmatched automation solutions</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="icon-box"><i class="fas fa-medal"></i></div>
+                    <h3>Premium Quality</h3>
+                    <p>We source only genuine, certified automation products from top global manufacturers ensuring reliability.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box"><i class="fas fa-headset"></i></div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock technical support and maintenance services to minimize your production downtime.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box"><i class="fas fa-rupee-sign"></i></div>
+                    <h3>Best Pricing</h3>
+                    <p>Competitive pricing with transparent quotations. No hidden costs. Best value for your investment.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-box"><i class="fas fa-shipping-fast"></i></div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick procurement and delivery across Tamil Nadu and South India with proper packaging and handling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECENT PROJECTS SECTION -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label"><i class="fas fa-project-diagram"></i> Recent Projects</div>
+                <h2>Our Latest <span>Automation</span> Projects</h2>
+                <p>Explore some of our recently completed industrial automation installations</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop&q=80" alt="Textile Automation Project" loading="lazy">
+                        <span class="project-badge">Completed</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Textile Mill Automation</h3>
+                        <p>Complete PLC and VFD automation solution for a large textile manufacturing unit in Coimbatore with SCADA integration.</p>
+                        <div class="project-meta">
+                            <div class="project-meta-item"><i class="fas fa-map-marker-alt"></i> Coimbatore</div>
+                            <div class="project-meta-item"><i class="fas fa-calendar"></i> 2026</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=400&fit=crop&q=80" alt="Control Panel Project" loading="lazy">
+                        <span class="project-badge">Completed</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>PLC Control Panel Setup</h3>
+                        <p>Custom designed and fabricated PLC control panels with Siemens S7-1200 for a food processing plant in Chennai.</p>
+                        <div class="project-meta">
+                            <div class="project-meta-item"><i class="fas fa-map-marker-alt"></i> Chennai</div>
+                            <div class="project-meta-item"><i class="fas fa-calendar"></i> 2026</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop&q=80" alt="Packaging Automation" loading="lazy">
+                        <span class="project-badge">Completed</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Packaging Line Automation</h3>
+                        <p>Full servo-driven packaging line automation with Delta servo systems and HMI touch panels for a pharma company.</p>
+                        <div class="project-meta">
+                            <div class="project-meta-item"><i class="fas fa-map-marker-alt"></i> Hyderabad</div>
+                            <div class="project-meta-item"><i class="fas fa-calendar"></i> 2025</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=400&fit=crop&q=80" alt="VFD Installation" loading="lazy">
+                        <span class="project-badge">Completed</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>VFD Retrofit Project</h3>
+                        <p>Energy-efficient VFD retrofit for 15 industrial motors at a steel rolling mill, reducing power consumption by 30%.</p>
+                        <div class="project-meta">
+                            <div class="project-meta-item"><i class="fas fa-map-marker-alt"></i> Salem</div>
+                            <div class="project-meta-item"><i class="fas fa-calendar"></i> 2025</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&q=80" alt="HMI SCADA Project" loading="lazy">
+                        <span class="project-badge">Completed</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>SCADA Monitoring System</h3>
+                        <p>Complete SCADA implementation with Trinity Touch HMI panels for real-time production monitoring across 4 plant floors.</p>
+                        <div class="project-meta">
+                            <div class="project-meta-item"><i class="fas fa-map-marker-alt"></i> Bangalore</div>
+                            <div class="project-meta-item"><i class="fas fa-calendar"></i> 2025</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop&q=80" alt="Robotics Integration" loading="lazy">
+                        <span class="project-badge">Completed</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Servo Robotics Integration</h3>
+                        <p>Precision servo-based pick and place robotic system integration for an automotive parts manufacturer.</p>
+                        <div class="project-meta">
+                            <div class="project-meta-item"><i class="fas fa-map-marker-alt"></i> Chennai</div>
+                            <div class="project-meta-item"><i class="fas fa-calendar"></i> 2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL PROJECT GALLERY -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label"><i class="fas fa-images"></i> Gallery</div>
+                <h2>Our Project <span>Gallery</span></h2>
+                <p>Real project completion photos from our industrial automation installations</p>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="0" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=450&fit=crop&q=80" alt="Industrial Control Panel" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                        <h4>Industrial Control Panel</h4>
+                        <p>Custom PLC Control Panel Installation</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=450&fit=crop&q=80" alt="Electrical Panel Board" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                        <h4>Electrical Panel Board</h4>
+                        <p>MCC Panel Installation Complete</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=450&fit=crop&q=80" alt="Automation Setup" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                        <h4>Automation Setup</h4>
+                        <p>Factory Floor Installation Complete</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="0" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=450&fit=crop&q=80" alt="PLC Programming" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                        <h4>PLC Programming</h4>
+                        <p>System Configuration & Testing</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=450&fit=crop&q=80" alt="VFD Installation" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                        <h4>VFD Installation</h4>
+                        <p>Drive System Setup Complete</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=450&fit=crop&q=80" alt="Servo System" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                        <h4>Servo System</h4>
+                        <p>Motion Control Setup Complete</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+        <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Gallery Image">
+        <button class="lightbox-nav lightbox-next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- YOUTUBE SECTION -->
+    <section class="youtube-section" id="youtube">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label"><i class="fab fa-youtube"></i> YouTube</div>
+                <h2>Watch Our <span style="color:#ff0000;">YouTube</span> Channel</h2>
+                <p>Subscribe to AS Automation for automation tutorials, project showcases, and product demos</p>
+            </div>
+            <div class="youtube-grid">
+                <div class="youtube-content" data-aos="fade-right" data-aos-duration="1000">
+                    <h3>AS Automation on YouTube</h3>
+                    <p>Stay updated with our latest automation projects, PLC programming tutorials, product reviews, and industry insights. Subscribe to our channel for valuable content on industrial automation.</p>
+                    <div class="youtube-stats">
+                        <div class="youtube-stat">
+                            <h4><i class="fas fa-play-circle"></i></h4>
+                            <p>Project Videos</p>
+                        </div>
+                        <div class="youtube-stat">
+                            <h4><i class="fas fa-graduation-cap"></i></h4>
+                            <p>Tutorials</p>
+                        </div>
+                        <div class="youtube-stat">
+                            <h4><i class="fas fa-bell"></i></h4>
+                            <p>Subscribe</p>
+                        </div>
+                    </div>
+                    <a href="https://youtube.com/@asautomation2018" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> Visit Our Channel
+                    </a>
+                </div>
+                <div class="youtube-embed" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div style="position: relative; width: 100%; height: 320px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+                        <i class="fab fa-youtube" style="font-size: 60px; color: #ff0000;"></i>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 16px; text-align: center; padding: 0 20px;">AS Automation YouTube Channel</p>
+                        <a href="https://youtube.com/@asautomation2018" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: #ff0000; color: white; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.3s;">
+                            <i class="fab fa-youtube"></i> Watch Videos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- INDUSTRIES SECTION -->
+    <section class="industries">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label"><i class="fas fa-industry"></i> Industries</div>
+                <h2>Industries We <span>Serve</span></h2>
+                <p>Providing automation solutions across diverse industrial sectors</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="0">
+                    <i class="fas fa-car"></i>
+                    <h4>Automotive</h4>
+                    <p>Assembly line automation and robotics</p>
+                </div>
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="50">
+                    <i class="fas fa-tshirt"></i>
+                    <h4>Textile</h4>
+                    <p>Weaving and spinning machine control</p>
+                </div>
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-utensils"></i>
+                    <h4>Food Processing</h4>
+                    <p>Packaging and processing automation</p>
+                </div>
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="150">
+                    <i class="fas fa-pills"></i>
+                    <h4>Pharma</h4>
+                    <p>Precision manufacturing control</p>
+                </div>
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-box"></i>
+                    <h4>Packaging</h4>
+                    <p>Conveyor and filling systems</p>
+                </div>
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="250">
+                    <i class="fas fa-cube"></i>
+                    <h4>Plastic</h4>
+                    <p>Injection molding automation</p>
+                </div>
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-flask"></i>
+                    <h4>Chemical</h4>
+                    <p>Process control and monitoring</p>
+                </div>
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="350">
+                    <i class="fas fa-industry"></i>
+                    <h4>Steel</h4>
+                    <p>Heavy machinery automation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label"><i class="fas fa-comments"></i> Testimonials</div>
+                <h2>What Our <span>Clients</span> Say</h2>
+                <p>Feedback from our valued customers across various industries</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">AS Automation provided excellent PLC and VFD solutions for our textile unit. Their team was professional and completed the installation on time. Highly recommended!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Director, Sri Lakshmi Textiles</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">The control panel design and commissioning work done by AS Automation was outstanding. Their pricing is very competitive compared to other suppliers in Chennai.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Suresh Murthy</h4>
+                            <p>Plant Manager, Auto Components Ltd</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">We have been working with AS Automation for 3 years now. Their after-sales support is excellent. They always respond quickly when we need spare parts or technical help.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">VP</div>
+                        <div class="author-info">
+                            <h4>Venkatesh Prasad</h4>
+                            <p>CEO, Prasad Packaging Industries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label"><i class="fas fa-envelope"></i> Contact Us</div>
+                <h2>Get In <span>Touch</span> With Us</h2>
+                <p>Reach out to us for automation product inquiries, quotations, and technical support</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right" data-aos-duration="1000">
+                    <h3>Contact Information</h3>
+                    <p>We are here to help you with all your automation needs. Contact us today for a free consultation and quote.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Office Address</h4>
+                                <p>AS Automation Company, Chennai, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p><a href="tel:+919176742590">+91 91767 42590</a> (Mr. Azarudeen)<br><a href="tel:+918760675638">+91 87606 75638</a> (Mr. Selva Kumar)</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <p><a href="https://wa.me/919176742590?text=Hello%20AS%20Automation,%20I%20am%20interested%20in%20your%20products%20and%20services." target="_blank">+91 91767 42590</a> (Mr. Azarudeen)</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p><a href="mailto:info@asautomationchennai.com">info@asautomationchennai.com</a><br><a href="mailto:sales@asautomationchennai.com">sales@asautomationchennai.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Saturday: 9:00 AM - 7:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="Enter phone number" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product">Product Interest</label>
+                            <select id="product" required>
+                                <option value="">Select Product Category</option>
+                                <option value="plc">PLC Systems</option>
+                                <option value="hmi">HMI / MMI Panels</option>
+                                <option value="vfd">VFD & Drives</option>
+                                <option value="sensors">Sensors & SMPS</option>
+                                <option value="relay">Relay Boards / Relays</option>
+                                <option value="servo">Servo Systems</option>
+                                <option value="encoders">Encoders</option>
+                                <option value="panels">Control Panels</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Tell us about your requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="map-section">
+        <div class="map-overlay">
+            <h4><i class="fas fa-map-marker-alt" style="color: var(--accent); margin-right: 8px;"></i>Chennai, Tamil Nadu</h4>
+            <p>Serving across South India</p>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248756.13131228785!2d80.04419815384617!3d13.047473316444392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b8ed84f75!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                allowfullscreen="" loading="lazy" 
+                title="AS Automation Location"></iframe>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <div class="logo-icon" style="background: linear-gradient(135deg, #1e3a5f 0%, #0a0e1a 100%); border: 2px solid rgba(59,130,246,0.5);">
+                            <svg viewBox="0 0 100 100" width="40" height="40" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#60a5fa" stroke-width="3"/>
+                                <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(96,165,250,0.3)" stroke-width="1"/>
+                                <path d="M30 60 Q50 25 70 60" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+                                <circle cx="50" cy="38" r="8" fill="#ffffff"/>
+                                <path d="M58 45 L75 30" stroke="#ff6b35" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M72 28 L80 22 M75 32 L82 26" stroke="#ff6b35" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M35 50 L25 55 M38 45 L28 50" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            <h1>AS AUTOMATION</h1>
+                            <span>Company Chennai</span>
+                        </div>
+                    </a>
+                    <p>Your trusted partner for industrial automation products and solutions in Chennai and across South India. Quality products, expert service, and customer satisfaction guaranteed.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@asautomation2018" target="_blank" class="youtube-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/919176742590" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> Products</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> PLC Systems</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> HMI Panels</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> VFD & Drives</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> Sensors</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> Control Panels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 91767 42590 (Azarudeen)</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 87606 75638 (Selva Kumar)</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@asautomationchennai.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Chennai, Tamil Nadu, India</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AS Automation Company Chennai. All Rights Reserved.</p>
+                <p>Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> by AS Automation Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/919176742590?text=Hello%20AS%20Automation,%20I%20am%20interested%20in%20your%20automation%20products%20and%20services." 
+           target="_blank" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Gallery images data
+        var galleryImages = [
+            { src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=900&fit=crop&q=80", caption: "Industrial Control Panel - Custom PLC Control Panel" },
+            { src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200&h=900&fit=crop&q=80", caption: "Electrical Panel Board - MCC Panel Installation" },
+            { src: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&h=900&fit=crop&q=80", caption: "Automation Setup - Factory Floor Installation" },
+            { src: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=900&fit=crop&q=80", caption: "PLC Programming - System Configuration" },
+            { src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=900&fit=crop&q=80", caption: "VFD Installation - Drive System Setup" },
+            { src: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=900&fit=crop&q=80", caption: "Servo System - Motion Control Setup" }
+        ];
+        var currentImageIndex = 0;
+
+        // Lightbox functions
+        function openLightbox(index) {
+            currentImageIndex = index;
+            var lightbox = document.getElementById('lightbox');
+            var img = document.getElementById('lightboxImg');
+            var caption = document.getElementById('lightboxCaption');
+            img.src = galleryImages[index].src;
+            caption.textContent = galleryImages[index].caption;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+            if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+            document.getElementById('lightboxImg').src = galleryImages[currentImageIndex].src;
+            document.getElementById('lightboxCaption').textContent = galleryImages[currentImageIndex].caption;
+        }
+
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'ArrowRight') changeImage(1);
+        });
+
+        // Create particles
+        var particlesContainer = document.getElementById('particles');
+        for (var i = 0; i < 20; i++) {
+            var particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particle.style.animationDuration = (5 + Math.random() * 5) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // FAST LOADER - Hide after page loads
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var loader = document.getElementById('loader');
+                if (loader) loader.classList.add('hidden');
+            }, 500);
+        });
+        // Fallback: hide loader after 3 seconds max
+        setTimeout(function() {
+            var loader = document.getElementById('loader');
+            if (loader) loader.classList.add('hidden');
+        }, 3000);
+
+        // AOS
+        AOS.init({
+            duration: 700,
+            once: true,
+            offset: 60,
+            easing: 'ease-out',
+            disable: function() {
+                return window.innerWidth < 768;
+            }
+        });
+
+        // NAVBAR SCROLL
+        var navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // MOBILE MENU
+        var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        var navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            var icon = navLinks.classList.contains('active') ? 'fa-times' : 'fa-bars';
+            mobileMenuBtn.innerHTML = '<i class="fas ' + icon + '"></i>';
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ACTIVE NAV LINK
+        var sections = document.querySelectorAll('section[id]');
+        var navItems = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', function() {
+            var current = '';
+            sections.forEach(function(section) {
+                var sectionTop = section.offsetTop - 120;
+                if (scrollY >= sectionTop) current = section.getAttribute('id');
+            });
+            navItems.forEach(function(item) {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) item.classList.add('active');
+            });
+        });
+
+        // BACK TO TOP
+        var backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 600) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // FORM SUBMIT
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var product = document.getElementById('product').value;
+            var productText = document.getElementById('product').options[document.getElementById('product').selectedIndex].text;
+            var message = document.getElementById('message').value;
+
+            var btn = e.target.querySelector('button[type="submit"]');
+            var originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+
+            var waMessage = "Hello AS Automation!%0A%0A" +
+                "*New Inquiry from Website*%0A" +
+                "------------------------%0A" +
+                "*Name:* " + encodeURIComponent(name) + "%0A" +
+                "*Phone:* " + encodeURIComponent(phone) + "%0A" +
+                "*Email:* " + encodeURIComponent(email) + "%0A" +
+                "*Product Interest:* " + encodeURIComponent(productText) + "%0A" +
+                "*Message:* " + encodeURIComponent(message || "No additional message") + "%0A" +
+                "------------------------%0A" +
+                "Please contact me. Thank you!";
+
+            var waLink = "https://wa.me/919176742590?text=" + waMessage;
+
+            setTimeout(function() {
+                btn.innerHTML = '<i class="fas fa-check"></i> Opening WhatsApp...';
+                btn.style.background = '#25d366';
+                window.open(waLink, '_blank');
+                e.target.reset();
+                setTimeout(function() {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
+            }, 800);
+        });
+
+        // SMOOTH SCROLL
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
